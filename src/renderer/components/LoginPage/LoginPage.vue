@@ -40,23 +40,23 @@
     },
     methods: {
       handleSubmit (name) {
-        this.$http.post('http://10.10.10.202:1024/v2/logon', this.formInfo)
-        .then((response) => {
-          console.log(response)
-          this.$Message.success('提交成功!')
-        })
-        .catch((error) => {
-          this.$Message.error(error)
-          console.log(error)
-        })
-        // this.$refs[name].validate((valid) => {
-        //   if (valid) {
-        //     this.$router.replace({path: '/main'})
-        //     this.$Message.success('提交成功!')
-        //   } else {
-        //     this.$Message.error('表单验证失败!')
-        //   }
+        // this.$http.post('http://10.10.10.202:1024/v2/logon', this.formInfo)
+        // .then((response) => {
+        //   console.log(response)
+        //   this.$Message.success('提交成功!')
         // })
+        // .catch((error) => {
+        //   this.$Message.error(error)
+        //   console.log(error)
+        // })
+        this.$refs[name].validate((valid) => {
+          if (valid) {
+            this.$router.replace({path: '/main'})
+            this.$Message.success('提交成功!')
+          } else {
+            this.$Message.error('表单验证失败!')
+          }
+        })
       }
     }
   }

@@ -5,11 +5,6 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    // {
-    //   path: '/landing',
-    //   name: 'landing-page',
-    //   component: require('@/components/LandingPage')
-    // },
     {
       path: '/login',
       name: 'login-page',
@@ -24,12 +19,17 @@ export default new Router({
           path: '/dashboard',
           name: 'dashboard-page',
           component: require('@/components/DashboardPage/DashboardPage')
+        },
+        {
+          path: '/landing',
+          name: 'landing-page',
+          component: require('@/components/LandingPage')
         }
       ]
     },
     {
       path: '*',
-      redirect: '/login'
+      redirect: '/main'
     }
   ]
 })
