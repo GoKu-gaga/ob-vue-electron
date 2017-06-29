@@ -12,7 +12,7 @@
             <Icon type="ios-keypad"></Icon>
             计算
         </template>
-        <Menu-item name="/compute/cluster">集群</Menu-item>
+        <Menu-item name="/cluster">集群</Menu-item>
         <Menu-item name="/compute/nc">计算节点</Menu-item>
         <Menu-item name="/compute/vm">虚拟机</Menu-item>
     </Submenu>

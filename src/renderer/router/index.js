@@ -21,6 +21,11 @@ export default new Router({
           component: require('@/components/DashboardPage/DashboardPage')
         },
         {
+          path: '/cluster',
+          name: 'cluster-page',
+          component: require('@/components/ClusterPage/ClusterPage')
+        },
+        {
           path: '/landing',
           name: 'landing-page',
           component: require('@/components/LandingPage')

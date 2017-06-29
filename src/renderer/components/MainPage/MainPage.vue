@@ -1,10 +1,10 @@
 <template lang="html">
   <div class="layout">
       <Row type="flex">
-        <i-col span="5" class="layout-menu-left">
+        <i-col span="4" class="layout-menu-left">
           <nav-bar></nav-bar>
         </i-col>
-        <i-col span="19" class="layout-container">
+        <i-col span="20" class="layout-container">
           <div class="layout-header"></div>
           <div class="layout-breadcrumb">
             <Breadcrumb>
@@ -44,14 +44,16 @@
   .layout-container{
     display: flex;
     flex-direction: column;
+    height: 100vh;
   }
   .layout-content{
     flex: 1;
     min-height: 200px;
     margin: 15px;
-    overflow: hidden;
+    overflow-y: auto;
     background: #fff;
     border-radius: 4px;
+    padding: 5px;
   }
   .layout-content-main{
     padding: 10px;
@@ -60,6 +62,7 @@
     text-align: center;
     padding: 10px 0 20px;
     color: #9ea7b4;
+    background-color: #fff;
   }
   .layout-menu-left{
     height: 100vh;
