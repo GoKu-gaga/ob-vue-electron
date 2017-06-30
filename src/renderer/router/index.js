@@ -41,6 +41,11 @@ export default new Router({
           component: require('@/components/ImagePage/ImagePage')
         },
         {
+          path: '/platform',
+          name: 'platform-page',
+          component: require('@/components/PlatformPage/PlatformPage')
+        },
+        {
           path: '/landing',
           name: 'landing-page',
           component: require('@/components/LandingPage')

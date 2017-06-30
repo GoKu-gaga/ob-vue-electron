@@ -21,6 +21,7 @@
             <Icon type="ios-analytics"></Icon>
             配置
         </template>
+        <Menu-item name="/platform">平台信息</Menu-item>
         <Menu-item name="/image">镜像</Menu-item>
     </Submenu>
   </Menu>
