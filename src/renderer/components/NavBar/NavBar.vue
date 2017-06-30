@@ -1,25 +1,34 @@
 <template>
-  <Menu active-name="1" theme="dark" width="auto" :open-names="['1']" @on-select="jump" accordion>
+  <Menu active-name="dashboard" theme="dark" width="auto" :open-names="['1']" @on-select="jump" accordion>
     <div class="layout-logo-left">
       <img id="logo" src="~@/assets/logo.png" alt="electron-vue">
     </div>
-    <Menu-item name="/dashboard">
-        <Icon type="help-buoy"></Icon>
+    <Menu-item name="dashboard">
+        <Icon type="ios-speedometer-outline"></Icon>
         仪表盘
     </Menu-item>
-    <Submenu name="2">
+    <Submenu name="compute">
         <template slot="title">
-            <Icon type="ios-keypad"></Icon>
-            计算
+          <Icon type="ios-keypad"></Icon>
+          计算
         </template>
         <Menu-item name="/cluster">集群</Menu-item>
         <Menu-item name="/nc">计算节点</Menu-item>
         <Menu-item name="/vm">虚拟机</Menu-item>
     </Submenu>
-    <Submenu name="3">
+    <Submenu name="monitor">
         <template slot="title">
-            <Icon type="ios-analytics"></Icon>
-            配置
+          <Icon type="monitor"></Icon>
+          监控
+        </template>
+        <Menu-item name="/component_services">平台运行状态</Menu-item>
+        <Menu-item name="/warning_msgs">警告信息</Menu-item>
+        <Menu-item name="/operations">操作日志</Menu-item>
+    </Submenu>
+    <Submenu name="preference">
+        <template slot="title">
+          <Icon type="android-options"></Icon>
+          配置
         </template>
         <Menu-item name="/platform">平台信息</Menu-item>
         <Menu-item name="/image">镜像</Menu-item>

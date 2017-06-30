@@ -36,6 +36,11 @@ export default new Router({
           component: require('@/components/VmPage/VmPage')
         },
         {
+          path: '/component_services',
+          name: 'component-services-page',
+          component: require('@/components/ComponentServicesPage/ComponentServicesPage')
+        },
+        {
           path: '/image',
           name: 'image-page',
           component: require('@/components/ImagePage/ImagePage')
