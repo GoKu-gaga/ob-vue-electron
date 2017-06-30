@@ -13,8 +13,8 @@
             计算
         </template>
         <Menu-item name="/cluster">集群</Menu-item>
-        <Menu-item name="/compute/nc">计算节点</Menu-item>
-        <Menu-item name="/compute/vm">虚拟机</Menu-item>
+        <Menu-item name="/nc">计算节点</Menu-item>
+        <Menu-item name="/vm">虚拟机</Menu-item>
     </Submenu>
     <Submenu name="3">
         <template slot="title">

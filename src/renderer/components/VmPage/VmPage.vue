@@ -3,12 +3,16 @@
     <Checkbox-group v-model="tableColumnsChecked" @on-change="changeTableColumns">
       <Checkbox label="selection">多选</Checkbox>
       <Checkbox label="name">名称</Checkbox>
+      <Checkbox label="tag">标签</Checkbox>
       <Checkbox label="status">状态</Checkbox>
+      <Checkbox label="ha">高可用</Checkbox>
+      <Checkbox label="user">用户</Checkbox>
+      <Checkbox label="create_time">创建于</Checkbox>
+      <Checkbox label="net">网络</Checkbox>
+      <Checkbox label="cluster">集群</Checkbox>
       <Checkbox label="nc">计算节点</Checkbox>
-      <Checkbox label="vm">虚拟机</Checkbox>
       <Checkbox label="vcpu">vCpu</Checkbox>
       <Checkbox label="mem">内存</Checkbox>
-      <Checkbox label="network">网络</Checkbox>
       <Checkbox label="action">操作</Checkbox>
     </Checkbox-group>
 
@@ -33,7 +37,7 @@
   export default {
     data () {
       return {
-        tableColumnsChecked: ['selection', 'name', 'status', 'nc', 'vm', 'vcpu', 'mem', 'network', 'action'],
+        tableColumnsChecked: ['selection', 'name', 'tag', 'status', 'ha', 'user', 'create_time', 'net', 'cluster', 'nc', 'vcpu', 'mem', 'action'],
         tableColumns: [],
         tableData: [],
         pageSize: 10
@@ -56,6 +60,17 @@
             key: 'name'
           },
           {
+            title: '标签',
+            key: 'tag',
+            render: (h, params) => {
+              return h('Tag', {
+                props: {
+                  color: 'green'
+                }
+              }, params.row.tag)
+            }
+          },
+          {
             title: '状态',
             key: 'status',
             render: (h, params) => {
@@ -72,12 +87,31 @@
             }
           },
           {
-            title: '计算节点',
-            key: 'nc'
+            title: '高可用',
+            key: 'ha'
           },
           {
-            title: '虚拟机',
-            key: 'vm'
+            title: '用户',
+            key: 'user'
+          },
+          {
+            title: '创建于',
+            key: 'create_time',
+            render: (h, params) => {
+              return h('div', this.formatDate(this.tableData[params.index].create_time))
+            }
+          },
+          {
+            title: '网络',
+            key: 'net'
+          },
+          {
+            title: '集群',
+            key: 'cluster'
+          },
+          {
+            title: '计算节点',
+            key: 'nc'
           },
           {
             title: 'vCPU',
@@ -86,10 +120,6 @@
           {
             title: '内存',
             key: 'mem'
-          },
-          {
-            title: '网络',
-            key: 'network'
           },
           {
             title: '操作',
@@ -136,6 +166,14 @@
         }
         return data
       },
+      formatDate (date) {
+        const y = date.getFullYear()
+        let m = date.getMonth() + 1
+        m = m < 10 ? '0' + m : m
+        let d = date.getDate()
+        d = d < 10 ? ('0' + d) : d
+        return y + '-' + m + '-' + d
+      },
       changeTableColumns () {
         this.tableColumns = this.getTableColumns()
       },
@@ -143,13 +181,17 @@
         let data = []
         for (let i = 0; i < this.pageSize; i++) {
           data.push({
-            name: '集群' + Math.floor(Math.random() * 100 + 1),
+            name: 'vm' + Math.floor(Math.random() * 100 + 1),
             status: Math.floor(Math.random() * 3 + 1),
+            tag: this.randomString(3),
+            ha: Math.floor(Math.random() * 100 + 1),
+            user: this.randomString(5),
+            create_time: new Date(),
+            net: this.randomString(5),
+            cluster: '集群' + Math.floor(Math.random() * 10 + 1),
             nc: Math.floor(Math.random() * 10 + 1),
-            vm: Math.floor(Math.random() * 50 + 1),
             vcpu: Math.floor(Math.random() * 60 + 1),
-            mem: Math.floor(Math.random() * 10000 + 1),
-            network: 'net'
+            mem: Math.floor(Math.random() * 10000 + 1)
           })
         }
         this.tableData = data
@@ -161,6 +203,15 @@
       changePageSize (size) {
         this.pageSize = size
         this.mockTableData()
+      },
+      randomString (len, charSet) {
+        charSet = charSet || 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+        var randomString = ''
+        for (var i = 0; i < len; i++) {
+          var randomPoz = Math.floor(Math.random() * charSet.length)
+          randomString += charSet.substring(randomPoz, randomPoz + 1)
+        }
+        return randomString
       }
     },
     mounted () {

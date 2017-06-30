@@ -26,6 +26,16 @@ export default new Router({
           component: require('@/components/ClusterPage/ClusterPage')
         },
         {
+          path: '/nc',
+          name: 'nc-page',
+          component: require('@/components/NcPage/NcPage')
+        },
+        {
+          path: '/vm',
+          name: 'vm-page',
+          component: require('@/components/VmPage/VmPage')
+        },
+        {
           path: '/landing',
           name: 'landing-page',
           component: require('@/components/LandingPage')
