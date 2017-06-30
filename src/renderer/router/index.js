@@ -41,6 +41,11 @@ export default new Router({
           component: require('@/components/ComponentServicesPage/ComponentServicesPage')
         },
         {
+          path: '/warning_msgs',
+          name: 'warning-msgs-page',
+          component: require('@/components/WarningMsgsPage/WarningMsgsPage')
+        },
+        {
           path: '/image',
           name: 'image-page',
           component: require('@/components/ImagePage/ImagePage')
