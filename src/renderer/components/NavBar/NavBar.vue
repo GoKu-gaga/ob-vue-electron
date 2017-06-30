@@ -19,10 +19,9 @@
     <Submenu name="3">
         <template slot="title">
             <Icon type="ios-analytics"></Icon>
-            导航三
+            配置
         </template>
-        <Menu-item name="/landing">选项 1</Menu-item>
-        <Menu-item name="3-2">选项 2</Menu-item>
+        <Menu-item name="/image">镜像</Menu-item>
     </Submenu>
   </Menu>
 </template>
