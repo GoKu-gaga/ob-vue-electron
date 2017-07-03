@@ -4,8 +4,7 @@
       <Panel v-for="item in services">
         {{item.name}}
         <div slot="content">
-          <h3>平台版本</h3>
-          <p>v1.2.3.11</p>
+          <p>{{item.status}}</p>
         </div>
       </Panel>
     </Collapse>
