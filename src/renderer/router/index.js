@@ -36,6 +36,11 @@ export default new Router({
           component: require('@/components/VmPage/VmPage')
         },
         {
+          path: '/groups',
+          name: 'group-page',
+          component: require('@/components/GroupPage/GroupPage')
+        },
+        {
           path: '/users',
           name: 'user-page',
           component: require('@/components/UserPage/UserPage')
