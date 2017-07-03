@@ -36,6 +36,16 @@ export default new Router({
           component: require('@/components/VmPage/VmPage')
         },
         {
+          path: '/storages',
+          name: 'storage-page',
+          component: require('@/components/StoragePage/StoragePage')
+        },
+        {
+          path: '/volumes',
+          name: 'volume-page',
+          component: require('@/components/VolumePage/VolumePage')
+        },
+        {
           path: '/groups',
           name: 'group-page',
           component: require('@/components/GroupPage/GroupPage')

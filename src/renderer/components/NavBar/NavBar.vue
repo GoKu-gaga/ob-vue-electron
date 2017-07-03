@@ -16,9 +16,17 @@
         <Menu-item name="/ncs">计算节点</Menu-item>
         <Menu-item name="/vms">虚拟机</Menu-item>
     </Submenu>
+    <Submenu name="storage">
+        <template slot="title">
+          <Icon type="ios-cloud"></Icon>
+          存储
+        </template>
+        <Menu-item name="/storages">存储</Menu-item>
+        <Menu-item name="/volumes">逻辑卷</Menu-item>
+    </Submenu>
     <Submenu name="user">
         <template slot="title">
-          <Icon type="ios-person-outline"></Icon>
+          <Icon type="android-contact"></Icon>
           用户
         </template>
         <Menu-item name="/groups">用户组</Menu-item>
