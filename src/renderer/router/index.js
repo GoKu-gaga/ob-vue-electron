@@ -21,19 +21,24 @@ export default new Router({
           component: require('@/components/DashboardPage/DashboardPage')
         },
         {
-          path: '/cluster',
+          path: '/clusters',
           name: 'cluster-page',
           component: require('@/components/ClusterPage/ClusterPage')
         },
         {
-          path: '/nc',
+          path: '/ncs',
           name: 'nc-page',
           component: require('@/components/NcPage/NcPage')
         },
         {
-          path: '/vm',
+          path: '/vms',
           name: 'vm-page',
           component: require('@/components/VmPage/VmPage')
+        },
+        {
+          path: '/users',
+          name: 'user-page',
+          component: require('@/components/UserPage/UserPage')
         },
         {
           path: '/component_services',

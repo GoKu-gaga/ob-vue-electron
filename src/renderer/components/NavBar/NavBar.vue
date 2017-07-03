@@ -12,9 +12,17 @@
           <Icon type="ios-keypad"></Icon>
           计算
         </template>
-        <Menu-item name="/cluster">集群</Menu-item>
-        <Menu-item name="/nc">计算节点</Menu-item>
-        <Menu-item name="/vm">虚拟机</Menu-item>
+        <Menu-item name="/clusters">集群</Menu-item>
+        <Menu-item name="/ncs">计算节点</Menu-item>
+        <Menu-item name="/vms">虚拟机</Menu-item>
+    </Submenu>
+    <Submenu name="user">
+        <template slot="title">
+          <Icon type="ios-person-outline"></Icon>
+          用户
+        </template>
+        <Menu-item name="/groups">用户组</Menu-item>
+        <Menu-item name="/users">用户</Menu-item>
     </Submenu>
     <Submenu name="monitor">
         <template slot="title">
