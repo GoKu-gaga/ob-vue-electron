@@ -8,9 +8,8 @@
           <div class="layout-header"></div>
           <div class="layout-breadcrumb">
             <Breadcrumb>
-              <Breadcrumb-item href="/dashboard">仪表盘</Breadcrumb-item>
-              <Breadcrumb-item href="/landing">应用中心</Breadcrumb-item>
-              <Breadcrumb-item href="/login">某应用</Breadcrumb-item>
+              <Breadcrumb-item >数据中心</Breadcrumb-item>
+              <Breadcrumb-item v-bind:href="$route.path">{{$route.name}}</Breadcrumb-item>
             </Breadcrumb>
           </div>
           <div class="layout-content">
@@ -28,7 +27,10 @@
   import NavBar from '../NavBar/NavBar'
   export default {
     name: 'main-page',
-    components: { NavBar }
+    components: { NavBar },
+    methods: {
+
+    }
   }
 </script>
 
@@ -42,7 +44,7 @@
     padding: 10px 15px 0;
   }
   .layout-container{
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     height: 100vh;
   }

@@ -17,87 +17,87 @@ export default new Router({
       children: [
         {
           path: '/dashboard',
-          name: 'dashboard-page',
+          name: '仪表盘',
           component: require('@/components/DashboardPage/DashboardPage')
         },
         {
           path: '/clusters',
-          name: 'cluster-page',
+          name: '集群',
           component: require('@/components/ClusterPage/ClusterPage')
         },
         {
           path: '/ncs',
-          name: 'nc-page',
+          name: '计算节点',
           component: require('@/components/NcPage/NcPage')
         },
         {
           path: '/vms',
-          name: 'vm-page',
+          name: '虚拟机',
           component: require('@/components/VmPage/VmPage')
         },
         {
           path: '/networks',
-          name: 'network-page',
+          name: '网络',
           component: require('@/components/NetworkPage/NetworkPage')
         },
         {
           path: '/subnets',
-          name: 'subnet-page',
+          name: '子网',
           component: require('@/components/SubnetPage/SubnetPage')
         },
         {
           path: '/security-groups',
-          name: 'security-groups-page',
+          name: '安全组',
           component: require('@/components/SecurityGroupsPage/SecurityGroupsPage')
         },
         {
           path: '/security-group-rules',
-          name: 'security-group-rules-page',
+          name: '网络规则',
           component: require('@/components/SecurityGroupRulePage/SecurityGroupRulePage')
         },
         {
           path: '/storages',
-          name: 'storage-page',
+          name: '存储',
           component: require('@/components/StoragePage/StoragePage')
         },
         {
           path: '/volumes',
-          name: 'volume-page',
+          name: '逻辑卷',
           component: require('@/components/VolumePage/VolumePage')
         },
         {
           path: '/user-groups',
-          name: 'user-group-page',
+          name: '用户组',
           component: require('@/components/UserGroupPage/UserGroupPage')
         },
         {
           path: '/users',
-          name: 'user-page',
+          name: '用户',
           component: require('@/components/UserPage/UserPage')
         },
         {
           path: '/component_services',
-          name: 'component-services-page',
+          name: '运行状态',
           component: require('@/components/ComponentServicesPage/ComponentServicesPage')
         },
         {
           path: '/warning_msgs',
-          name: 'warning-msgs-page',
+          name: '警告',
           component: require('@/components/WarningMsgsPage/WarningMsgsPage')
         },
         {
           path: '/operations',
-          name: 'operation-page',
+          name: '操作日志',
           component: require('@/components/OperationPage/OperationPage')
         },
         {
           path: '/image',
-          name: 'image-page',
+          name: '镜像',
           component: require('@/components/ImagePage/ImagePage')
         },
         {
           path: '/platform',
-          name: 'platform-page',
+          name: '平台信息',
           component: require('@/components/PlatformPage/PlatformPage')
         }
       ]
