@@ -46,6 +46,16 @@ export default new Router({
           component: require('@/components/SubnetPage/SubnetPage')
         },
         {
+          path: '/security-groups',
+          name: 'security-groups-page',
+          component: require('@/components/SecurityGroupsPage/SecurityGroupsPage')
+        },
+        {
+          path: '/security-group-rules',
+          name: 'security-group-rules-page',
+          component: require('@/components/SecurityGroupRulePage/SecurityGroupRulePage')
+        },
+        {
           path: '/storages',
           name: 'storage-page',
           component: require('@/components/StoragePage/StoragePage')
@@ -56,9 +66,9 @@ export default new Router({
           component: require('@/components/VolumePage/VolumePage')
         },
         {
-          path: '/groups',
-          name: 'group-page',
-          component: require('@/components/GroupPage/GroupPage')
+          path: '/user-groups',
+          name: 'user-group-page',
+          component: require('@/components/UserGroupPage/UserGroupPage')
         },
         {
           path: '/users',
@@ -89,11 +99,6 @@ export default new Router({
           path: '/platform',
           name: 'platform-page',
           component: require('@/components/PlatformPage/PlatformPage')
-        },
-        {
-          path: '/landing',
-          name: 'landing-page',
-          component: require('@/components/LandingPage')
         }
       ]
     },
