@@ -18,6 +18,14 @@
     </Submenu>
     <Submenu name="storage">
         <template slot="title">
+          <Icon type="network"></Icon>
+          网络
+        </template>
+        <Menu-item name="/networks">网络</Menu-item>
+        <Menu-item name="/subnets">子网</Menu-item>
+    </Submenu>
+    <Submenu name="storage">
+        <template slot="title">
           <Icon type="ios-cloud"></Icon>
           存储
         </template>
