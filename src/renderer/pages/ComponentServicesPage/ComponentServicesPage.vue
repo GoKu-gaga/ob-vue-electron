@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <Collapse v-model="panelOpened">
-      <Panel v-for="item in services">
+      <Panel v-for="item in services" :key="item.name">
         {{item.name}}
         <div slot="content">
           <p>{{item.status}}</p>

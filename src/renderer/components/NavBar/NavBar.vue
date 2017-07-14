@@ -1,13 +1,10 @@
 <template>
-  <Menu active-name="dashboard" theme="dark" width="auto" :open-names="['dashboard']" @on-select="jump" accordion>
-    <div class="layout-logo-left">
-      <img id="logo" src="~@/assets/logo.png" alt="electron-vue">
-    </div>
-    <Menu-item name="login">
+  <Menu :active-name="$route.path" theme="dark" width="auto" :open-names="openNames" @on-select="jump" accordion>
+    <Menu-item name="/login">
       <Icon type="log-in"></Icon>
       登录
     </Menu-item>
-    <Menu-item name="dashboard">
+    <Menu-item name="/dashboard">
       <Icon type="ios-analytics-outline"></Icon>
       仪表盘
     </Menu-item>
@@ -20,7 +17,7 @@
       <Menu-item name="/ncs">计算节点</Menu-item>
       <Menu-item name="/vms">虚拟机</Menu-item>
     </Submenu>
-    <Submenu name="storage">
+    <Submenu name="network">
       <template slot="title">
         <Icon type="network"></Icon>
         网络
@@ -28,7 +25,7 @@
       <Menu-item name="/networks">网络</Menu-item>
       <Menu-item name="/subnets">子网</Menu-item>
     </Submenu>
-    <Submenu name="storage">
+    <Submenu name="security">
       <template slot="title">
         <Icon type="locked"></Icon>
         安全组
@@ -79,6 +76,48 @@
 
       }
     },
+    computed: {
+      openNames: function () {
+        let items
+        switch (this.$route.path) {
+          case '/dashboard':
+            items = ['dashboard']
+            break
+          case '/clusters':
+          case '/ncs':
+          case '/vms':
+            items = ['compute']
+            break
+          case '/networks':
+          case '/subnets':
+            items = ['network']
+            break
+          case '/security-groups':
+          case '/security-group-rules':
+            items = ['security']
+            break
+          case '/storages':
+          case '/volumes':
+            items = ['storage']
+            break
+          case '/user-groups':
+          case '/users':
+            items = ['user']
+            break
+          case '/component_services':
+          case '/warning_msgs':
+          case '/operations':
+            items = ['monitor']
+            break
+          case '/platform':
+          case '/image':
+            items = ['preference']
+            break
+          default:
+        }
+        return items
+      }
+    },
     methods: {
       jump (page) {
         this.$router.replace({path: page})
@@ -86,18 +125,9 @@
     }
   }
 </script>
-<style>
-.layout-logo-left{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 30px;
-  border-radius: 3px;
-  margin: 15px auto;
+<style scoped>
+Menu {
+  background: #1c2438;
 }
 
-#logo {
-  height: 30px;
-  width: auto;
-}
 </style>

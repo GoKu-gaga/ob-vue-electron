@@ -8,97 +8,97 @@ export default new Router({
     {
       path: '/login',
       name: 'login-page',
-      component: require('@/components/LoginPage/LoginPage')
+      component: require('@/pages/LoginPage/LoginPage')
     },
     {
       path: '/main',
       name: 'main-page',
-      component: require('@/components/MainPage/MainPage'),
+      component: require('@/pages/MainPage/MainPage'),
       children: [
         {
           path: '/dashboard',
           name: '仪表盘',
-          component: require('@/components/DashboardPage/DashboardPage')
+          component: require('@/pages/DashboardPage/DashboardPage')
         },
         {
           path: '/clusters',
           name: '集群',
-          component: require('@/components/ClusterPage/ClusterPage')
+          component: require('@/pages/ClusterPage/ClusterPage')
         },
         {
           path: '/ncs',
           name: '计算节点',
-          component: require('@/components/NcPage/NcPage')
+          component: require('@/pages/NcPage/NcPage')
         },
         {
           path: '/vms',
           name: '虚拟机',
-          component: require('@/components/VmPage/VmPage')
+          component: require('@/pages/VmPage/VmPage')
         },
         {
           path: '/networks',
           name: '网络',
-          component: require('@/components/NetworkPage/NetworkPage')
+          component: require('@/pages/NetworkPage/NetworkPage')
         },
         {
           path: '/subnets',
           name: '子网',
-          component: require('@/components/SubnetPage/SubnetPage')
+          component: require('@/pages/SubnetPage/SubnetPage')
         },
         {
           path: '/security-groups',
           name: '安全组',
-          component: require('@/components/SecurityGroupsPage/SecurityGroupsPage')
+          component: require('@/pages/SecurityGroupsPage/SecurityGroupsPage')
         },
         {
           path: '/security-group-rules',
           name: '网络规则',
-          component: require('@/components/SecurityGroupRulePage/SecurityGroupRulePage')
+          component: require('@/pages/SecurityGroupRulePage/SecurityGroupRulePage')
         },
         {
           path: '/storages',
           name: '存储',
-          component: require('@/components/StoragePage/StoragePage')
+          component: require('@/pages/StoragePage/StoragePage')
         },
         {
           path: '/volumes',
           name: '逻辑卷',
-          component: require('@/components/VolumePage/VolumePage')
+          component: require('@/pages/VolumePage/VolumePage')
         },
         {
           path: '/user-groups',
           name: '用户组',
-          component: require('@/components/UserGroupPage/UserGroupPage')
+          component: require('@/pages/UserGroupPage/UserGroupPage')
         },
         {
           path: '/users',
           name: '用户',
-          component: require('@/components/UserPage/UserPage')
+          component: require('@/pages/UserPage/UserPage')
         },
         {
           path: '/component_services',
           name: '运行状态',
-          component: require('@/components/ComponentServicesPage/ComponentServicesPage')
+          component: require('@/pages/ComponentServicesPage/ComponentServicesPage')
         },
         {
           path: '/warning_msgs',
           name: '警告',
-          component: require('@/components/WarningMsgsPage/WarningMsgsPage')
+          component: require('@/pages/WarningMsgsPage/WarningMsgsPage')
         },
         {
           path: '/operations',
           name: '操作日志',
-          component: require('@/components/OperationPage/OperationPage')
+          component: require('@/pages/OperationPage/OperationPage')
         },
         {
           path: '/image',
           name: '镜像',
-          component: require('@/components/ImagePage/ImagePage')
+          component: require('@/pages/ImagePage/ImagePage')
         },
         {
           path: '/platform',
           name: '平台信息',
-          component: require('@/components/PlatformPage/PlatformPage')
+          component: require('@/pages/PlatformPage/PlatformPage')
         }
       ]
     },

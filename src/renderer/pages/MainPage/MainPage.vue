@@ -2,6 +2,9 @@
   <div class="layout">
       <Row type="flex">
         <i-col span="4" class="layout-menu-left">
+          <div class="layout-logo-left">
+            <img id="logo" src="~@/assets/logo.png" alt="electron-vue">
+          </div>
           <nav-bar></nav-bar>
         </i-col>
         <i-col span="20" class="layout-container">
@@ -24,7 +27,7 @@
 </template>
 
 <script>
-  import NavBar from '../NavBar/NavBar'
+  import NavBar from '../../components/NavBar/NavBar'
   export default {
     name: 'main-page',
     components: { NavBar },
@@ -69,6 +72,18 @@
   .layout-menu-left{
     height: 100vh;
     background: #1c2438;
+  }
+  .layout-logo-left{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 30px;
+    border-radius: 3px;
+    margin: 15px auto;
+  }
+  #logo {
+    height: 30px;
+    width: auto;
   }
   .layout-header{
     height: 60px;
